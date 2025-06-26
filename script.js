@@ -5,6 +5,7 @@ const supabase = createClient(
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBmanl2c2twb3lnbWpjdHN6b2VxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA5Mjc0ODcsImV4cCI6MjA2NjUwMzQ4N30.ieU9djwHI2jYx6W811fQJj5yPoITwC0FhbjKB0i2wBY"
 );
 
+// Kirim data baru
 window.kirimReservasi = async function () {
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
@@ -31,6 +32,7 @@ window.kirimReservasi = async function () {
   }
 };
 
+// Tampilkan data ke tabel
 async function tampilkanData() {
   const { data, error } = await supabase
     .from("reservasi")
@@ -73,9 +75,9 @@ async function tampilkanData() {
               <td style="padding:10px;">${d.guests}</td>
               <td style="padding:10px; text-align:center;">
                 <button onclick="editData(${d.id}, '${d.name}', '${d.email}', '${d.phone}', '${d.date}', '${d.time}', ${d.guests})"
-                  style="background:#ffc107; border:none; padding:5px 10px; border-radius:4px; margin-right:5px;">Edit</button>
+                  class="btn btn-warning btn-sm">Edit</button>
                 <button onclick="hapusData(${d.id})"
-                  style="background:#dc3545; color:white; border:none; padding:5px 10px; border-radius:4px;">Hapus</button>
+                  class="btn btn-danger btn-sm">Hapus</button>
               </td>
             </tr>`
           )
@@ -86,7 +88,8 @@ async function tampilkanData() {
 
   container.innerHTML = table;
 }
-// Buka modal edit
+
+// Edit data: tampilkan modal dan isi form
 window.editData = function (id, name, email, phone, date, time, guests) {
   document.getElementById("edit-id").value = id;
   document.getElementById("edit-name").value = name;
@@ -96,16 +99,11 @@ window.editData = function (id, name, email, phone, date, time, guests) {
   document.getElementById("edit-time").value = time;
   document.getElementById("edit-guests").value = guests;
 
-  // Tampilkan modal
-  document.getElementById("edit-modal").style.display = "flex";
+  const modal = new bootstrap.Modal(document.getElementById("editModal"));
+  modal.show();
 };
 
-// Tutup modal edit
-window.tutupModalEdit = function () {
-  document.getElementById("edit-modal").style.display = "none";
-};
-
-// Proses simpan edit
+// Simpan data hasil edit
 document.getElementById("edit-form").addEventListener("submit", async (e) => {
   e.preventDefault();
   const id = document.getElementById("edit-id").value;
@@ -124,14 +122,16 @@ document.getElementById("edit-form").addEventListener("submit", async (e) => {
     Swal.fire("Gagal!", error.message, "error");
   } else {
     Swal.fire("Sukses!", "Data berhasil diubah", "success");
-    document.getElementById("edit-modal").style.display = "none";
+
+    const modalEl = bootstrap.Modal.getInstance(document.getElementById('editModal'));
+    modalEl.hide();
     tampilkanData();
   }
 });
 
-// Hapus data
+// Hapus data dengan konfirmasi
 window.hapusData = async function (id) {
-  const confirm = await Swal.fire({
+  const konfirmasi = await Swal.fire({
     title: "Yakin ingin menghapus?",
     icon: "warning",
     showCancelButton: true,
@@ -139,7 +139,7 @@ window.hapusData = async function (id) {
     cancelButtonText: "Batal"
   });
 
-  if (confirm.isConfirmed) {
+  if (konfirmasi.isConfirmed) {
     const { error } = await supabase.from("reservasi").delete().eq("id", id);
     if (error) {
       Swal.fire("Gagal!", error.message, "error");
@@ -150,4 +150,6 @@ window.hapusData = async function (id) {
   }
 };
 
+// Tampilkan data saat halaman dimuat
 tampilkanData();
+
