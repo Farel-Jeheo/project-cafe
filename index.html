@@ -3,276 +3,158 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cafe Good Night - Slide Navigation</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Cafe Good Night - Bootstrap Edition</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <style>
-      .btn {
-  background-color: #f6c90e;
-  color: #3c2f2f;
-  padding: 12px 28px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: inline-block;
-  text-align: center;
-}
-    </style>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
-  <body>
-    <header>
-      <div class="container">
-        <h1>Cafe Good Night</h1>
+  <body class="bg-light text-dark">
+    <header class="bg-dark text-white py-3 mb-4 shadow">
+      <div class="container d-flex justify-content-between align-items-center">
+        <h1 class="h3 m-0">Cafe Good Night</h1>
         <nav>
-          <ul>
-            <li>
-              <button class="nav-btn active" data-slide="0">Beranda</button>
-            </li>
-            <li><button class="nav-btn" data-slide="1">Menu</button></li>
-            <li><button class="nav-btn" data-slide="2">Galeri</button></li>
-            <li><button class="nav-btn" data-slide="3">Reservasi</button></li>
-            <li><button class="nav-btn" data-slide="4">Tentang</button></li>
-            <li><button class="nav-btn" data-slide="5">Kontak</button></li>
+          <ul class="nav">
+            <li class="nav-item"><a class="nav-link text-white" href="#beranda">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#menu">Menu</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#galeri">Galeri</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#reservasi">Reservasi</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#tentang">Tentang</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#kontak">Kontak</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <main>
-      <div class="slides-container">
-        <!-- Slide 0: Beranda -->
-        <section class="slide" id="slide-0">
-          <div class="container hero-content">
-            <div class="hero-text">
-              <h2>Selamat Datang di Cafe Good Night</h2>
-              <p>
-                Tempat terbaik menikmati kopi malam yang hangat dan suasana
-                cozy.
-              </p>
-              <button class="btn" data-slide="3">Reservasi Sekarang</button>
-            </div>
-            <div class="hero-image">
-              <img
-                src="https://images.unsplash.com/photo-1727294810283-d1d9186af6e4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Cafe Good Night"
-              />
-            </div>
-          </div>
-        </section>
+    <main class="container">
+      <section id="beranda" class="text-center py-5">
+        <h2>Selamat Datang di Cafe Good Night</h2>
+        <p class="lead">Tempat terbaik menikmati kopi malam yang hangat dan suasana cozy.</p>
+        <img src="https://images.unsplash.com/photo-1727294810283-d1d9186af6e4?q=80&w=1170&auto=format&fit=crop" class="img-fluid rounded shadow" alt="Cafe Good Night">
+        <div class="mt-4">
+          <a href="#reservasi" class="btn btn-warning btn-lg">Reservasi Sekarang</a>
+        </div>
+      </section>
 
-        <!-- Slide 1: Menu -->
-        <section class="slide" id="slide-1">
-          <div class="container section">
-            <h2>Menu Favorit Kami</h2>
-            <div class="menu-items">
-              <div class="menu-card">
-                <img
-                  src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=300&q=80"
-                  alt="Espresso"
-                />
-                <h3>Espresso</h3>
-                <p>Kopi hitam pekat, nikmat dan kuat.</p>
-                <span class="price">Rp15.000</span>
+      <section id="menu" class="py-5">
+        <h2 class="text-center mb-4">Menu Favorit Kami</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=300&q=80" class="card-img-top" alt="Espresso">
+              <div class="card-body">
+                <h5 class="card-title">Espresso</h5>
+                <p class="card-text">Kopi hitam pekat, nikmat dan kuat.</p>
               </div>
-              <div class="menu-card">
-                <img
-                  src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=300&q=80"
-                  alt="Latte"
-                />
-                <h3>Latte</h3>
-                <p>Kopi susu lembut dengan busa krim.</p>
-                <span class="price">Rp25.000</span>
-              </div>
-              <div class="menu-card">
-                <img
-                  src="https://images.unsplash.com/photo-1629552153801-8cf6adec07db?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Red Velvet Cake"
-                />
-                <h3>Red Velvet Cake</h3>
-                <p>Kue lembut dengan rasa manis dan lembut.</p>
-                <span class="price">Rp40.000</span>
-              </div>
-              <div class="menu-card">
-                <img
-                  src="https://plus.unsplash.com/premium_photo-1723759368567-8511fe3528ee?q=80&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Teh Hijau"
-                />
-                <h3>Teh Hijau</h3>
-                <p>Teh hijau segar tanpa tambahan gula.</p>
-                <span class="price">Rp15.000</span>
-              </div>
+              <div class="card-footer text-end fw-bold">Rp15.000</div>
             </div>
           </div>
-        </section>
-
-        <!-- Slide 2: Galeri -->
-        <section class="slide" id="slide-2">
-          <div class="container section">
-            <h2>Galeri Suasana</h2>
-            <div class="gallery-grid">
-              <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=300&q=80"
-                alt="Suasana 1"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=300&q=80"
-                alt="Suasana 2"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1532713107108-dfb5d8d2fc42?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Barista"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=300&q=80"
-                alt="Kopi"
-              />
+          <div class="col">
+            <div class="card h-100">
+              <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=300&q=80" class="card-img-top" alt="Latte">
+              <div class="card-body">
+                <h5 class="card-title">Latte</h5>
+                <p class="card-text">Kopi susu lembut dengan busa krim.</p>
+              </div>
+              <div class="card-footer text-end fw-bold">Rp25.000</div>
             </div>
           </div>
-        </section>
-        
-<section class="slide" id="slide-3">
-  <div class="container section">
-    <h2>Reservasi Meja</h2>
-    <form id="reservation-form">
-      <input type="hidden" id="edit-id" value="">
-      <div class="form-group">
-        <label for="name">Nama Lengkap</label>
-        <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required />
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required />
-      </div>
-      <div class="form-group">
-        <label for="phone">Nomor Telepon</label>
-        <input type="tel" id="phone" name="phone" placeholder="Masukkan nomor telepon" required />
-      </div>
-      <div class="form-group">
-        <label for="date">Tanggal Reservasi</label>
-        <input type="date" id="date" name="date" required />
-      </div>
-      <div class="form-group">
-        <label for="time">Waktu</label>
-        <input type="time" id="time" name="time" required />
-      </div>
-      <div class="form-group">
-        <label for="guests">Jumlah Tamu</label>
-        <input type="number" id="guests" name="guests" min="1" max="20" value="1" required />
-      </div>
-      <button type="button" class="btn" onclick="prosesReservasi()" id="submit-btn">Kirim Reservasi</button>
-    </form>
-
-    <!-- TABEL RESERVASI -->
-    <div id="tabel-reservasi" style="margin-top: 40px;"></div>
-  </div>
-</section>
-
-        <!-- Slide 4: Tentang -->
-        <section class="slide" id="slide-4">
-          <div class="container section">
-            <h2>Tentang Cafe Good Night</h2>
-            <p>
-              Cafe Good Night adalah tempat berkumpulnya para pencinta kopi
-              dengan suasana malam yang hangat dan nyaman. Kami menyediakan
-              berbagai jenis kopi berkualitas dan makanan pendamping dengan
-              sentuhan khusus dari barista kami.
-            </p>
-            <p>
-              Dengan interior yang cozy dan pelayanan ramah, kami berkomitmen
-              memberikan pengalaman ngopi terbaik untuk Anda.
-            </p>
+          <div class="col">
+            <div class="card h-100">
+              <img src="https://images.unsplash.com/photo-1629552153801-8cf6adec07db?q=80&w=687&auto=format&fit=crop" class="card-img-top" alt="Red Velvet Cake">
+              <div class="card-body">
+                <h5 class="card-title">Red Velvet Cake</h5>
+                <p class="card-text">Kue lembut dengan rasa manis dan lembut.</p>
+              </div>
+              <div class="card-footer text-end fw-bold">Rp40.000</div>
+            </div>
           </div>
-        </section>
-
-        <!-- Slide 5: Kontak -->
-        <section class="slide" id="slide-5">
-          <div class="container section">
-            <h2>Kontak Kami</h2>
-            <p>
-              Email:
-              <a href="mailto:info@cafegoodnight.com">info@cafegoodnight.com</a>
-            </p>
-            <p>Telepon: 0812 4688 8582</p>
-            <p>Alamat: Jalan Pisang Candi No. 106, Malang</p>
-            <p>
-              Sosial Media:
-              <a
-                href="https://www.instagram.com/farel_jeheo23?igsh=MWw5c2U3aTQ0aWF6eQ=="
-                aria-label="Instagram"
-                >Instagram</a
-              >
-              |
-              <a
-                href="https://www.facebook.com/farel.jeheo"
-                aria-label="Facebook"
-                >Facebook</a
-              >
-              |
-              <a href="https://wa.me/6281246888582" aria-label="WhatsApp"
-                >WhatsApp</a
-              >
-            </p>
+          <div class="col">
+            <div class="card h-100">
+              <img src="https://plus.unsplash.com/premium_photo-1723759368567-8511fe3528ee?q=80&w=1100&auto=format&fit=crop" class="card-img-top" alt="Teh Hijau">
+              <div class="card-body">
+                <h5 class="card-title">Teh Hijau</h5>
+                <p class="card-text">Teh hijau segar tanpa tambahan gula.</p>
+              </div>
+              <div class="card-footer text-end fw-bold">Rp15.000</div>
+            </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      <section id="galeri" class="py-5">
+        <h2 class="text-center mb-4">Galeri Suasana</h2>
+        <div class="row g-3">
+          <div class="col-6 col-md-3">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop" class="img-fluid rounded shadow-sm" alt="Suasana 1">
+          </div>
+          <div class="col-6 col-md-3">
+            <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop" class="img-fluid rounded shadow-sm" alt="Suasana 2">
+          </div>
+          <div class="col-6 col-md-3">
+            <img src="https://images.unsplash.com/photo-1532713107108-dfb5d8d2fc42?q=80&w=1964&auto=format&fit=crop" class="img-fluid rounded shadow-sm" alt="Barista">
+          </div>
+          <div class="col-6 col-md-3">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop" class="img-fluid rounded shadow-sm" alt="Kopi">
+          </div>
+        </div>
+      </section>
+
+      <section id="reservasi" class="py-5">
+        <h2 class="text-center mb-4">Reservasi Meja</h2>
+        <form class="mx-auto" style="max-width: 600px;">
+          <div class="mb-3">
+            <label for="name" class="form-label">Nama Lengkap</label>
+            <input type="text" class="form-control" id="name" required />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required />
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Nomor Telepon</label>
+            <input type="tel" class="form-control" id="phone" required />
+          </div>
+          <div class="mb-3">
+            <label for="date" class="form-label">Tanggal</label>
+            <input type="date" class="form-control" id="date" required />
+          </div>
+          <div class="mb-3">
+            <label for="time" class="form-label">Waktu</label>
+            <input type="time" class="form-control" id="time" required />
+          </div>
+          <div class="mb-3">
+            <label for="guests" class="form-label">Jumlah Tamu</label>
+            <input type="number" class="form-control" id="guests" min="1" max="20" required />
+          </div>
+          <button type="submit" class="btn btn-warning w-100">Kirim Reservasi</button>
+        </form>
+      </section>
+
+      <section id="tentang" class="py-5">
+        <h2 class="text-center mb-4">Tentang Kami</h2>
+        <p class="text-center">Cafe Good Night adalah tempat berkumpulnya para pencinta kopi dengan suasana malam yang hangat dan nyaman.</p>
+        <p class="text-center">Kami menyediakan berbagai jenis kopi berkualitas dan makanan pendamping dengan sentuhan khusus dari barista kami.</p>
+      </section>
+
+      <section id="kontak" class="py-5">
+        <h2 class="text-center mb-4">Kontak Kami</h2>
+        <div class="text-center">
+          <p>Email: <a href="mailto:info@cafegoodnight.com">info@cafegoodnight.com</a></p>
+          <p>Telepon: 0812 4688 8582</p>
+          <p>Alamat: Jalan Pisang Candi No. 106, Malang</p>
+          <p>Sosial Media:
+            <a href="https://www.instagram.com/farel_jeheo23">Instagram</a> |
+            <a href="https://www.facebook.com/farel.jeheo">Facebook</a> |
+            <a href="https://wa.me/6281246888582">WhatsApp</a>
+          </p>
+        </div>
+      </section>
     </main>
 
-    <footer>
-      <p>&copy; 2025 Cafe Good Night. All rights reserved.</p>
+    <footer class="bg-dark text-white text-center py-3">
+      <p class="mb-0">&copy; 2025 Cafe Good Night. All rights reserved.</p>
     </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script type="module" src="script.js"></script>
-
-
-    <script>
-      const navButtons = document.querySelectorAll(".nav-btn");
-      const slidesContainer = document.querySelector(".slides-container");
-      const slidesCount = document.querySelectorAll(".slide").length;
-
-      navButtons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          // Remove active class on all nav buttons
-          navButtons.forEach((b) => b.classList.remove("active"));
-          btn.classList.add("active");
-
-          const slideIndex = btn.getAttribute("data-slide");
-          // Slide container scroll by transform: translateX
-          slidesContainer.style.transform = `translateX(-${
-            slideIndex * 100
-          }vw)`;
-        });
-      });
-
-      // For button inside hero to open reservasi slide
-      document.querySelectorAll("[data-slide]").forEach((el) => {
-        el.addEventListener("click", () => {
-          const slideIndex = el.getAttribute("data-slide");
-          if (!isNaN(slideIndex)) {
-            navButtons.forEach((b) => b.classList.remove("active"));
-            navButtons[slideIndex].classList.add("active");
-            slidesContainer.style.transform = `translateX(-${
-              slideIndex * 100
-            }vw)`;
-          }
-        });
-      });
-
-      // Reservation form submit handler
-      const form = document.getElementById("reservation-form");
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        alert("Terima kasih! Reservasi Anda telah kami terima.");
-        form.reset();
-      });
-    </script>
   </body>
 </html>
