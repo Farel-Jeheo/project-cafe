@@ -77,7 +77,7 @@ const supabase = createClient(
     if (error || !data) return (container.innerHTML = "<p>Gagal memuat data.</p>");
 
     const tabel = `
-      <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+      <table style="width:100%; border-collapse:collapse; margin-top:10px;" class="table">
         <thead style="background:#007bff; color:#fff;">
           <tr>
             <th style="padding:8px;">No</th>
