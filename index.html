@@ -122,11 +122,12 @@
             </div>
           </div>
         </section>
-
-       <section class="slide" id="slide-3">
+        
+<section class="slide" id="slide-3">
   <div class="container section">
     <h2>Reservasi Meja</h2>
     <form id="reservation-form">
+      <input type="hidden" id="edit-id" value="">
       <div class="form-group">
         <label for="name">Nama Lengkap</label>
         <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required />
@@ -151,66 +152,13 @@
         <label for="guests">Jumlah Tamu</label>
         <input type="number" id="guests" name="guests" min="1" max="20" value="1" required />
       </div>
-      <button type="button" class="btn" onclick="kirimReservasi()">Kirim Reservasi</button>
+      <button type="button" class="btn" onclick="prosesReservasi()" id="submit-btn">Kirim Reservasi</button>
     </form>
 
-    <!-- Tabel hasil reservasi -->
+    <!-- TABEL RESERVASI -->
     <div id="tabel-reservasi" style="margin-top: 40px;"></div>
   </div>
 </section>
-
-<!-- SweetAlert2 -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<!-- Modal Bootstrap -->
-<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <form id="edit-form">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editModalLabel">Edit Reservasi</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
-        </div>
-        <div class="modal-body">
-          <input type="hidden" id="edit-id" />
-          <div class="mb-3">
-            <label for="edit-name" class="form-label">Nama</label>
-            <input type="text" class="form-control" id="edit-name" required>
-          </div>
-          <div class="mb-3">
-            <label for="edit-email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="edit-email" required>
-          </div>
-          <div class="mb-3">
-            <label for="edit-phone" class="form-label">Telepon</label>
-            <input type="tel" class="form-control" id="edit-phone" required>
-          </div>
-          <div class="mb-3">
-            <label for="edit-date" class="form-label">Tanggal</label>
-            <input type="date" class="form-control" id="edit-date" required>
-          </div>
-          <div class="mb-3">
-            <label for="edit-time" class="form-label">Waktu</label>
-            <input type="time" class="form-control" id="edit-time" required>
-          </div>
-          <div class="mb-3">
-            <label for="edit-guests" class="form-label">Jumlah Tamu</label>
-            <input type="number" class="form-control" id="edit-guests" min="1" max="20" required>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-          <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-
-
-<!-- Script -->
-<script type="module" src="script.js"></script>
-
 
         <!-- Slide 4: Tentang -->
         <section class="slide" id="slide-4">
