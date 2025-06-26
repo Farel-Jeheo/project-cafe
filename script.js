@@ -1,8 +1,8 @@
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
 const supabase = createClient(
-  "https://gfdkeutgojqefygoxnow.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdmZGtldXRnb2pxZWZ5Z294bm93Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk4Mjk5NDksImV4cCI6MjA2NTQwNTk0OX0.vWQ70YA7egXTLg8glagWKhhjmIqpohxByA5Vgnv_eMk"
+  "https://pfjyvskpoygmjctszoeq.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBmanl2c2twb3lnbWpjdHN6b2VxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA5Mjc0ODcsImV4cCI6MjA2NjUwMzQ4N30.ieU9djwHI2jYx6W811fQJj5yPoITwC0FhbjKB0i2wBY"
 );
 
 window.kirimReservasi = async function () {
@@ -86,8 +86,7 @@ async function tampilkanData() {
 
   container.innerHTML = table;
 }
-
-// Modal logic
+// Buka modal edit
 window.editData = function (id, name, email, phone, date, time, guests) {
   document.getElementById("edit-id").value = id;
   document.getElementById("edit-name").value = name;
@@ -96,13 +95,17 @@ window.editData = function (id, name, email, phone, date, time, guests) {
   document.getElementById("edit-date").value = date;
   document.getElementById("edit-time").value = time;
   document.getElementById("edit-guests").value = guests;
+
+  // Tampilkan modal
   document.getElementById("edit-modal").style.display = "flex";
 };
 
+// Tutup modal edit
 window.tutupModalEdit = function () {
   document.getElementById("edit-modal").style.display = "none";
 };
 
+// Proses simpan edit
 document.getElementById("edit-form").addEventListener("submit", async (e) => {
   e.preventDefault();
   const id = document.getElementById("edit-id").value;
