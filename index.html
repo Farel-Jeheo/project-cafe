@@ -121,8 +121,7 @@
           </div>
         </section>
 
-        <!-- Slide 3: Reservasi -->
-      <section class="slide" id="slide-3">
+       <section class="slide" id="slide-3">
   <div class="container section">
     <h2>Reservasi Meja</h2>
     <form id="reservation-form">
@@ -153,10 +152,35 @@
       <button type="button" class="btn" onclick="kirimReservasi()">Kirim Reservasi</button>
     </form>
 
-    <!-- Tempat menampilkan data reservasi -->
-    <div id="tabel-reservasi" style="margin-top: 30px;"></div>
+    <!-- Tabel hasil reservasi -->
+    <div id="tabel-reservasi" style="margin-top: 40px;"></div>
   </div>
 </section>
+
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Modal Edit -->
+<div id="edit-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#00000080; justify-content:center; align-items:center; z-index:1000;">
+  <div style="background:white; padding:20px; border-radius:10px; width:90%; max-width:400px;">
+    <h3>Edit Reservasi</h3>
+    <form id="edit-form">
+      <input type="hidden" id="edit-id" />
+      <div class="form-group"><label>Nama</label><input type="text" id="edit-name" required /></div>
+      <div class="form-group"><label>Email</label><input type="email" id="edit-email" required /></div>
+      <div class="form-group"><label>Telepon</label><input type="tel" id="edit-phone" required /></div>
+      <div class="form-group"><label>Tanggal</label><input type="date" id="edit-date" required /></div>
+      <div class="form-group"><label>Waktu</label><input type="time" id="edit-time" required /></div>
+      <div class="form-group"><label>Jumlah Tamu</label><input type="number" id="edit-guests" min="1" max="20" required /></div>
+      <button type="submit" class="btn">Simpan</button>
+      <button type="button" class="btn" onclick="tutupModalEdit()">Batal</button>
+    </form>
+  </div>
+</div>
+
+<!-- Script -->
+<script type="module" src="script.js"></script>
+
 
         <!-- Slide 4: Tentang -->
         <section class="slide" id="slide-4">
@@ -207,29 +231,6 @@
         </section>
       </div>
     </main>
-<!-- SweetAlert2 -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-<!-- Tempat tampilkan tabel reservasi -->
-<div id="tabel-reservasi" style="margin-top: 30px;"></div>
-
-<!-- Modal Edit -->
-<div id="edit-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#00000099; display:flex; justify-content:center; align-items:center; z-index:1000;">
-  <div style="background:white; padding:20px; border-radius:10px; width:90%; max-width:400px;">
-    <h3>Edit Reservasi</h3>
-    <form id="edit-form">
-      <input type="hidden" id="edit-id" />
-      <div class="form-group"><label>Nama</label><input type="text" id="edit-name" required /></div>
-      <div class="form-group"><label>Email</label><input type="email" id="edit-email" required /></div>
-      <div class="form-group"><label>Telepon</label><input type="tel" id="edit-phone" required /></div>
-      <div class="form-group"><label>Tanggal</label><input type="date" id="edit-date" required /></div>
-      <div class="form-group"><label>Waktu</label><input type="time" id="edit-time" required /></div>
-      <div class="form-group"><label>Jumlah Tamu</label><input type="number" id="edit-guests" min="1" max="20" required /></div>
-      <button type="submit" class="btn">Simpan</button>
-      <button type="button" class="btn" onclick="tutupModalEdit()">Batal</button>
-    </form>
-  </div>
-</div>
 
     <footer>
       <p>&copy; 2025 Cafe Good Night. All rights reserved.</p>
