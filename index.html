@@ -122,64 +122,41 @@
         </section>
 
         <!-- Slide 3: Reservasi -->
-        <section class="slide" id="slide-3">
-          <div class="container section">
-            <h2>Reservasi Meja</h2>
-            <form id="reservation-form">
-              <div class="form-group">
-                <label for="name">Nama Lengkap</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Masukkan nama Anda"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Masukkan email Anda"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="phone">Nomor Telepon</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="Masukkan nomor telepon"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="date">Tanggal Reservasi</label>
-                <input type="date" id="date" name="date" required />
-              </div>
-              <div class="form-group">
-                <label for="time">Waktu</label>
-                <input type="time" id="time" name="time" required />
-              </div>
-              <div class="form-group">
-                <label for="guests">Jumlah Tamu</label>
-                <input
-                  type="number"
-                  id="guests"
-                  name="guests"
-                  min="1"
-                  max="20"
-                  value="1"
-                  required
-                />
-              </div>
-              <button type="submit" class="btn">Kirim Reservasi</button>
-            </form>
-          </div>
-        </section>
+      <section class="slide" id="slide-3">
+  <div class="container section">
+    <h2>Reservasi Meja</h2>
+    <form id="reservation-form">
+      <div class="form-group">
+        <label for="name">Nama Lengkap</label>
+        <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required />
+      </div>
+      <div class="form-group">
+        <label for="phone">Nomor Telepon</label>
+        <input type="tel" id="phone" name="phone" placeholder="Masukkan nomor telepon" required />
+      </div>
+      <div class="form-group">
+        <label for="date">Tanggal Reservasi</label>
+        <input type="date" id="date" name="date" required />
+      </div>
+      <div class="form-group">
+        <label for="time">Waktu</label>
+        <input type="time" id="time" name="time" required />
+      </div>
+      <div class="form-group">
+        <label for="guests">Jumlah Tamu</label>
+        <input type="number" id="guests" name="guests" min="1" max="20" value="1" required />
+      </div>
+      <button type="button" class="btn" onclick="kirimReservasi()">Kirim Reservasi</button>
+    </form>
+
+    <!-- Tempat menampilkan data reservasi -->
+    <div id="tabel-reservasi" style="margin-top: 30px;"></div>
+  </div>
+</section>
 
         <!-- Slide 4: Tentang -->
         <section class="slide" id="slide-4">
@@ -234,6 +211,10 @@
     <footer>
       <p>&copy; 2025 Cafe Good Night. All rights reserved.</p>
     </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="script.js"></script>
+
 
     <script>
       const navButtons = document.querySelectorAll(".nav-btn");
