@@ -1,0 +1,249 @@
+/* Reset & dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff8f0;
+  color: #3c2f2f;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #5d4037;
+  color: #fff;
+  padding: 15px 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+header h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+nav ul li {
+}
+nav button.nav-btn {
+  background: none;
+  border: none;
+  color: #ffebd6;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+nav button.nav-btn:hover,
+nav button.nav-btn.active {
+  color: #f6c90e;
+  border-bottom: 3px solid #f6c90e;
+}
+
+/* Main container for slides */
+main {
+  margin-top: 70px;
+  overflow: hidden;
+}
+.slides-container {
+  display: flex;
+  width: 600vw; /* 6 slides * 100vw */
+  transition: transform 0.5s ease;
+}
+
+/* Each slide */
+.slide {
+  width: 100vw;
+  flex-shrink: 0;
+  padding: 40px 20px 80px;
+  min-height: calc(100vh - 70px);
+  overflow-y: auto;
+  background: #fff8f0;
+}
+
+/* Hero */
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+.hero-text {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+.hero-text h2 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+.hero-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Button */
+.btn {
+  background-color: #f6c90e;
+  color: #3c2f2f;
+  padding: 12px 28px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+.btn:hover {
+  background-color: #d4b009;
+}
+
+/* Menu */
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+.menu-card {
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  max-width: 250px;
+  text-align: center;
+  padding-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+.menu-card:hover {
+  transform: scale(1.05);
+}
+.menu-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.menu-card h3 {
+  margin: 15px 0 8px;
+}
+.menu-card p {
+  font-size: 0.9rem;
+  color: #5a4b47;
+}
+.price {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 700;
+  color: #f6c90e;
+  font-size: 1.1rem;
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+.gallery-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Form */
+form {
+  max-width: 500px;
+  margin: auto;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+input,
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+input:focus,
+select:focus {
+  border-color: #f6c90e;
+  outline: none;
+}
+
+/* Section titles */
+.section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #5d4037;
+}
+
+/* Footer */
+footer {
+  background-color: #5d4037;
+  color: #ffebd6;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  nav ul {
+    justify-content: center;
+  }
+}
