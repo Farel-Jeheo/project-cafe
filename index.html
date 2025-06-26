@@ -161,25 +161,51 @@
 
 <!-- SweetAlert2 -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-<!-- Modal Edit -->
-<!-- Modal Edit -->
-<div id="edit-modal" class="modal" style="display: none; position:fixed; top:0; left:0; width:100%; height:100%; background:#00000080; justify-content:center; align-items:center; z-index:999;">
-  <div class="modal-content" style="background:white; padding:20px; border-radius:10px; width:90%; max-width:400px;">
-    <h3 style="margin-bottom: 10px;">Edit Reservasi</h3>
-    <form id="edit-form">
-      <input type="hidden" id="edit-id" />
-      <div class="form-group" style="margin-bottom:10px;"><label>Nama</label><input type="text" id="edit-name" required style="width:100%;padding:8px;" /></div>
-      <div class="form-group" style="margin-bottom:10px;"><label>Email</label><input type="email" id="edit-email" required style="width:100%;padding:8px;" /></div>
-      <div class="form-group" style="margin-bottom:10px;"><label>Telepon</label><input type="tel" id="edit-phone" required style="width:100%;padding:8px;" /></div>
-      <div class="form-group" style="margin-bottom:10px;"><label>Tanggal</label><input type="date" id="edit-date" required style="width:100%;padding:8px;" /></div>
-      <div class="form-group" style="margin-bottom:10px;"><label>Waktu</label><input type="time" id="edit-time" required style="width:100%;padding:8px;" /></div>
-      <div class="form-group" style="margin-bottom:10px;"><label>Jumlah Tamu</label><input type="number" id="edit-guests" min="1" max="20" required style="width:100%;padding:8px;" /></div>
-      <button type="submit" class="btn" style="padding:8px 12px; background:#28a745; color:white; border:none; border-radius:5px; margin-right:8px;">Simpan</button>
-      <button type="button" class="btn" onclick="tutupModalEdit()" style="padding:8px 12px; background:#6c757d; color:white; border:none; border-radius:5px;">Batal</button>
-    </form>
+<!-- Modal Bootstrap -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="edit-form">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Edit Reservasi</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="edit-id" />
+          <div class="mb-3">
+            <label for="edit-name" class="form-label">Nama</label>
+            <input type="text" class="form-control" id="edit-name" required>
+          </div>
+          <div class="mb-3">
+            <label for="edit-email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="edit-email" required>
+          </div>
+          <div class="mb-3">
+            <label for="edit-phone" class="form-label">Telepon</label>
+            <input type="tel" class="form-control" id="edit-phone" required>
+          </div>
+          <div class="mb-3">
+            <label for="edit-date" class="form-label">Tanggal</label>
+            <input type="date" class="form-control" id="edit-date" required>
+          </div>
+          <div class="mb-3">
+            <label for="edit-time" class="form-label">Waktu</label>
+            <input type="time" class="form-control" id="edit-time" required>
+          </div>
+          <div class="mb-3">
+            <label for="edit-guests" class="form-label">Jumlah Tamu</label>
+            <input type="number" class="form-control" id="edit-guests" min="1" max="20" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
+
 
 
 <!-- Script -->
